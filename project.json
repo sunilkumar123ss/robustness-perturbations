@@ -1,0 +1,11 @@
+{
+  "slug": "robustness-perturbations",
+  "title": "Robustness perturbation harness",
+  "description": "Generate text variations and assess exact output stability from externally supplied responses, reporting missing observations separately.",
+  "category": "evaluation",
+  "demo_args": [
+    "--input",
+    "example.json"
+  ],
+  "expected_exit": 0
+}
