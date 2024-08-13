@@ -60,3 +60,26 @@ def score(suite, responses):
     return {"tested": tested, "missing": missing, "stable": stable, "coverage": tested / total,
             "exact_output_stability": stable / tested if tested else None, "details": details}
 
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--input", required=True)
+    parser.add_argument("--mode", choices=("generate", "score"), default="score")
+    args = parser.parse_args()
+    try:
+        input_path = Path(args.input)
+        if not input_path.is_absolute():
+            input_path = Path(__file__).resolve().parent / input_path
+        with input_path.open(encoding="utf-8") as handle:
+            data = json.load(handle)
+        suite = generate(data["cases"])
+        result = {"suite": suite} if args.mode == "generate" else score(suite, data["responses"])
+        print(json.dumps(result, indent=2, ensure_ascii=False, allow_nan=False))
+        return 0
+    except (ValueError, KeyError, TypeError, OSError) as error:
+        print(f"Invalid robustness evaluation: {error}", file=sys.stderr)
+        return 2
+
+
+if __name__ == "__main__":
+    sys.exit(main())
