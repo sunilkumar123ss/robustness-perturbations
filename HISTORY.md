@@ -4,7 +4,7 @@ This reference implementation and all of the following milestone commits were pr
 
 **Every recorded author and committer date in this timeline is synthetic. These dates are not evidence that the code was written, tested, deployed, or used professionally in the past.**
 
-This snapshot is milestone 6 of 12. It is an incomplete tutorial stage; source, fixtures, tests, the CLI, and automation are introduced progressively.
+This snapshot is milestone 7 of 12. It is an incomplete tutorial stage; source, fixtures, tests, the CLI, and automation are introduced progressively.
 
 The progression decomposes already-completed October 2026 code into meaningful additions. It is not recovered original development history. Publication time is separate from the synthetic Git timestamps.
 
@@ -18,7 +18,7 @@ The progression decomposes already-completed October 2026 code into meaningful a
 | 4 | 2024-08-04T13:18:19+05:30 | Implement score (present) |
 | 5 | 2024-08-13T15:43:13+05:30 | Expose the command-line demonstration and input handling (present) |
 | 6 | 2024-09-14T10:29:15+05:30 | Test variations are deterministic (present) |
-| 7 | 2024-11-29T11:35:11+05:30 | Test changed and missing are distinct (later stage) |
+| 7 | 2024-11-29T11:35:11+05:30 | Test changed and missing are distinct (present) |
 | 8 | 2025-02-08T10:24:49+05:30 | Test no measurements has no stability claim (later stage) |
 | 9 | 2026-02-02T18:11:23+05:30 | Test duplicate cases and unknown results (later stage) |
 | 10 | 2026-02-08T16:40:36+05:30 | Add one-command test, demonstration and CLI verification (later stage) |
