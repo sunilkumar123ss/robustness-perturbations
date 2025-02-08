@@ -18,3 +18,8 @@ class RobustnessTests(unittest.TestCase):
         self.assertEqual(result["exact_output_stability"], 0.5)
         self.assertAlmostEqual(result["coverage"], 2 / 3)
 
+    def test_no_measurements_has_no_stability_claim(self):
+        result = score(self.suite, [])
+        self.assertIsNone(result["exact_output_stability"])
+        self.assertEqual(result["coverage"], 0)
+
