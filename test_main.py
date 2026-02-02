@@ -23,3 +23,14 @@ class RobustnessTests(unittest.TestCase):
         self.assertIsNone(result["exact_output_stability"])
         self.assertEqual(result["coverage"], 0)
 
+    def test_duplicate_cases_and_unknown_results(self):
+        with self.assertRaises(ValueError):
+            generate([{"id": "a", "text": "x"}, {"id": "a", "text": "y"}])
+        with self.assertRaises(ValueError):
+            score(self.suite, [{"id": "unknown", "baseline_output": "x", "variants": {}}])
+        with self.assertRaises(ValueError):
+            generate([])
+
+
+if __name__ == "__main__":
+    unittest.main()
